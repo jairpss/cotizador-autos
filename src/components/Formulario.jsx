@@ -1,4 +1,5 @@
-import { BRANDS, YEARS } from '../constants/index'
+import { Fragment } from 'react'
+import { BRANDS, YEARS, PLANS } from '../constants/index'
 
 const Formulario = () => {
   return (
@@ -25,7 +26,7 @@ const Formulario = () => {
             </div>
 
             <div className="my-5">
-                <label className="block mb-2 font-semibold text-slate-500">Brand</label>
+                <label className="block mb-2 font-semibold text-slate-500">Year</label>
                 <select
                     name="brand"
                     className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md"
@@ -43,6 +44,29 @@ const Formulario = () => {
                 </select>
             </div>
 
+            <div className="my-5">
+                <label className="block mb-2 font-semibold text-slate-500">Plans</label>
+                <div className="flex gap-3 items-center">
+                    {PLANS.map(plan => (
+                        <Fragment key={plan.id}>
+                            <label>
+                                {plan.name}
+                            </label>
+                            <input
+                                type="radio"
+                                name="plan"
+                                value={plan.id}
+                            />
+                        </Fragment>
+                    ))}
+                </div>
+            </div>
+            
+            <input 
+                type="submit"
+                className="w-full bg-indigo-500 hover:bg-indigo-600 transition-colors text-white cursor-pointer p-3 font-semibold rounded-md"
+                value="Quote"
+            />
         </form>
     </>
   )
