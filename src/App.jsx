@@ -1,3 +1,4 @@
+import { QuoterProvider } from './context/QuoterProvider'
 import AppSeguro from './components/AppSeguro'
 
 function App() {
@@ -5,7 +6,9 @@ function App() {
 
   return (
     <div >
-      <AppSeguro />
+      <QuoterProvider>
+        <AppSeguro />
+      </QuoterProvider>
     </div>
   )
 }
