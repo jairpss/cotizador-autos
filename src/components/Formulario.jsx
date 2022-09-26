@@ -7,10 +7,10 @@ const Formulario = () => {
 
         <form>
             <div className="my-5">
-                <label className="block mb-2 font-semibold text-slate-500">Brand</label>
+                <label className="block mb-2 font-semibold text-slate-500 font-jost">Brand</label>
                 <select
                     name="brand"
-                    className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md"
+                    className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-jost"
                 >
                     <option value="">-- Select brand --</option>
 
@@ -26,10 +26,10 @@ const Formulario = () => {
             </div>
 
             <div className="my-5">
-                <label className="block mb-2 font-semibold text-slate-500">Year</label>
+                <label className="block mb-2 font-semibold text-slate-500 font-jost">Year</label>
                 <select
                     name="brand"
-                    className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md"
+                    className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-jost"
                 >
                     <option value="">-- Select year --</option>
 
@@ -45,11 +45,11 @@ const Formulario = () => {
             </div>
 
             <div className="my-5">
-                <label className="block mb-2 font-semibold text-slate-500">Plans</label>
+                <label className="block mb-2 font-semibold text-slate-500 font-jost">Plans</label>
                 <div className="flex gap-3 items-center">
                     {PLANS.map(plan => (
                         <Fragment key={plan.id}>
-                            <label>
+                            <label className="font-jost">
                                 {plan.name}
                             </label>
                             <input
@@ -64,7 +64,7 @@ const Formulario = () => {
             
             <input 
                 type="submit"
-                className="w-full bg-indigo-500 hover:bg-indigo-600 transition-colors text-white cursor-pointer p-3 font-semibold rounded-md"
+                className="w-full bg-indigo-500 hover:bg-indigo-600 transition-colors text-white cursor-pointer p-3 font-semibold rounded-md font-jost text-lg"
                 value="Quote"
             />
         </form>
