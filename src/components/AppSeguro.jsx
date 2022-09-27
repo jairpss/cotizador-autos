@@ -1,5 +1,4 @@
 import Formulario from './Formulario'
-import useQuoter from '../hooks/useQuoter'
 
 const AppSeguro = () => {
 

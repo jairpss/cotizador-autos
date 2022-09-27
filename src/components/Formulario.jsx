@@ -4,6 +4,8 @@ import useQuoter from '../hooks/useQuoter'
 
 const Formulario = () => {
 
+    const { data, handleChangeData } = useQuoter()
+
   return (
     <>
 
@@ -13,6 +15,8 @@ const Formulario = () => {
                 <select
                     name="brand"
                     className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-jost"
+                    onChange={e => handleChangeData(e)}
+                    value={data.brand}
                 >
                     <option value="">-- Select brand --</option>
 
@@ -30,8 +34,10 @@ const Formulario = () => {
             <div className="my-5">
                 <label className="block mb-2 font-semibold text-slate-500 font-jost">Year</label>
                 <select
-                    name="brand"
+                    name="year"
                     className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-jost"
+                    onChange={e => handleChangeData(e)}
+                    value={data.year}
                 >
                     <option value="">-- Select year --</option>
 
@@ -58,6 +64,7 @@ const Formulario = () => {
                                 type="radio"
                                 name="plan"
                                 value={plan.id}
+                                onChange={e => handleChangeData(e)}
                             />
                         </Fragment>
                     ))}
