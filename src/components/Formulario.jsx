@@ -1,15 +1,26 @@
 import { Fragment } from 'react'
 import { BRANDS, YEARS, PLANS } from '../constants/index'
 import useQuoter from '../hooks/useQuoter'
+import Error from '../components/Error'
 
 const Formulario = () => {
 
-    const { data, handleChangeData } = useQuoter()
+    const { data, handleChangeData, error, setError } = useQuoter()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if(Object.values(data).includes('')) {
+            setError('Fill all the fields')
+            return
+        }
+        setError('')
+    }
 
   return (
     <>
-
-        <form>
+        {error && <Error />}
+        <form onSubmit={handleSubmit}>
             <div className="my-5">
                 <label className="block mb-2 font-semibold text-slate-500 font-jost">Brand</label>
                 <select

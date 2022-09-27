@@ -1,19 +1,21 @@
-import { useSatate, createContext } from "react"
+import { useState, createContext } from "react"
 
 const QuoterContext = createContext()
 
 const QuoterProvider = ({children}) => {
 
-    const [data, setData] = useSatate({
+    const [data, setData] = useState({
         brand: '',
         year: '',
         plan: ''
     })
 
-    const hadleChangeData = e => {
+    const [error, setError] = useState('')
+
+    const handleChangeData = e => {
         setData({
             ...data,
-            [e.target.namr]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -21,7 +23,9 @@ const QuoterProvider = ({children}) => {
         <QuoterContext.Provider
             value={{
                 data,
-                hadleChangeData
+                handleChangeData,
+                error,
+                setError
             }}
         >
             {children}
