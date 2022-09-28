@@ -19,13 +19,18 @@ const QuoterProvider = ({children}) => {
         })
     }
 
+    const quoteInsurance = () => {
+        console.log('cotizando...')
+    }
+
     return (
         <QuoterContext.Provider
             value={{
                 data,
                 handleChangeData,
                 error,
-                setError
+                setError,
+                quoteInsurance
             }}
         >
             {children}
