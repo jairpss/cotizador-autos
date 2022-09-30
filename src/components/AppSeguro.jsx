@@ -5,7 +5,7 @@ const AppSeguro = () => {
   return (
     <>
         <header className="my-10">
-            <h1 className="text-white text-center text-4xl font-bold font-jost">
+            <h1 className="text-white text-center text-4xl font-extrabold font-figtree">
                 Car Insurance Quote
             </h1>
         </header>

@@ -5,7 +5,7 @@ import Error from '../components/Error'
 
 const Formulario = () => {
 
-    const { data, handleChangeData, error, setError } = useQuoter()
+    const { data, handleChangeData, error, setError, quoteInsurance } = useQuoter()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -15,6 +15,7 @@ const Formulario = () => {
             return
         }
         setError('')
+        quoteInsurance()
     }
 
   return (
@@ -22,10 +23,10 @@ const Formulario = () => {
         {error && <Error />}
         <form onSubmit={handleSubmit}>
             <div className="my-5">
-                <label className="block mb-2 font-semibold text-slate-500 font-jost">Brand</label>
+                <label className="block mb-2 font-bold text-slate-500 font-figtree">Brand</label>
                 <select
                     name="brand"
-                    className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-jost"
+                    className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-figtree"
                     onChange={e => handleChangeData(e)}
                     value={data.brand}
                 >
@@ -43,10 +44,10 @@ const Formulario = () => {
             </div>
 
             <div className="my-5">
-                <label className="block mb-2 font-semibold text-slate-500 font-jost">Year</label>
+                <label className="block mb-2 font-bold text-slate-500 font-figtree">Year</label>
                 <select
                     name="year"
-                    className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-jost"
+                    className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-figtree"
                     onChange={e => handleChangeData(e)}
                     value={data.year}
                 >
@@ -64,11 +65,11 @@ const Formulario = () => {
             </div>
 
             <div className="my-5">
-                <label className="block mb-2 font-semibold text-slate-500 font-jost">Plans</label>
+                <label className="block mb-2 font-bold text-slate-500 font-figtree">Plans</label>
                 <div className="flex gap-3 items-center">
                     {PLANS.map(plan => (
                         <Fragment key={plan.id}>
-                            <label className="font-jost">
+                            <label className="font-figtree">
                                 {plan.name}
                             </label>
                             <input
@@ -84,7 +85,7 @@ const Formulario = () => {
             
             <input 
                 type="submit"
-                className="w-full bg-indigo-500 hover:bg-indigo-600 transition-colors text-white cursor-pointer p-3 font-semibold rounded-md font-jost text-lg"
+                className="w-full bg-indigo-500 hover:bg-indigo-600 transition-colors text-white cursor-pointer p-3 font-bold rounded-md font-figtree text-lg"
                 value="Quote"
             />
         </form>
