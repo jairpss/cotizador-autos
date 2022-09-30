@@ -1,7 +1,7 @@
 export const BRANDS = [
-    {id: 1, name: 'Audi'},
-    {id: 2, name: 'Chevrolet'},
-    {id: 3, name: 'Toyota'}
+    {id: 1, name: 'Porsche'},
+    {id: 2, name: 'Audi'},
+    {id: 3, name: 'Volkswagen'},
 ]
 
 const YEARMAX = new Date().getFullYear()
