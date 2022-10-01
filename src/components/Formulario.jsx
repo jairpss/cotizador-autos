@@ -5,12 +5,12 @@ import Error from '../components/Error'
 
 const Formulario = () => {
 
-    const { data, handleChangeData, error, setError, quoteInsurance } = useQuoter()
+    const { datos, handleChangeData, error, setError, quoteInsurance } = useQuoter()
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if(Object.values(data).includes('')) {
+        if(Object.values(datos).includes('')) {
             setError('Fill all the fields')
             return
         }
@@ -28,7 +28,7 @@ const Formulario = () => {
                     name="brand"
                     className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-figtree"
                     onChange={e => handleChangeData(e)}
-                    value={data.brand}
+                    value={datos.brand}
                 >
                     <option value="">-- Select brand --</option>
 
@@ -49,7 +49,7 @@ const Formulario = () => {
                     name="year"
                     className="w-full p-3 bg-slate-50 border border-slate-300 rounded-md font-figtree"
                     onChange={e => handleChangeData(e)}
-                    value={data.year}
+                    value={datos.year}
                 >
                     <option value="">-- Select year --</option>
 

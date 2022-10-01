@@ -5,7 +5,7 @@ const QuoterContext = createContext()
 
 const QuoterProvider = ({children}) => {
 
-    const [data, setData] = useState({
+    const [datos, setData] = useState({
         brand: '',
         year: '',
         plan: ''
@@ -16,7 +16,7 @@ const QuoterProvider = ({children}) => {
 
     const handleChangeData = e => {
         setData({
-            ...data,
+            ...datos,
             [e.target.name] : e.target.value
         })
     } 
@@ -24,37 +24,36 @@ const QuoterProvider = ({children}) => {
     const quoteInsurance = () => {
         //base
         let result = 2000
-        console.log("año:", data.year)
+        console.log("año:", datos.year)
         //Get year difference
-        const difference = getYearDifference(data.year)
+        const difference = getYearDifference(datos.year)
         console.log("difference:", difference)
         //Decrease 3% each year
         result -= ((difference * 3) * result) / 100
 
         //Brands
-        result *= calcBrand(data.brand)
-        console.log("marca:", data.brand)
+        result *= calcBrand(datos.brand)
+        console.log("marca:", datos.brand)
         console.log(result)
 
         //Basic 20% Full 50% more
-        result *= calcPlan(data.plan)
+        result *= calcPlan(datos.plan)
 
         result = formatMoney(result)
-        console.log("plan:", data.plan)
+        console.log("plan:", datos.plan)
         console.log(result)
         setResult(result)
-        
-
-    }
+    } 
 
     return (
         <QuoterContext.Provider
             value={{
-                data,
+                datos,
                 handleChangeData,
                 error,
                 setError,
-                quoteInsurance
+                quoteInsurance,
+                result
             }}
         >
             {children}
