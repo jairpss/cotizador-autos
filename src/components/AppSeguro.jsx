@@ -1,9 +1,11 @@
 import Formulario from './Formulario'
+import Spinner from './Spinner'
+import Result from './Result'
 import useQuoter from '../hooks/useQuoter'
 
 const AppSeguro = () => {
  
-  const { result } = useQuoter()
+  const { result, loading } = useQuoter()
 
   return (
     <>
@@ -16,7 +18,7 @@ const AppSeguro = () => {
         <main className="bg-white md:w-2/3 lg:w-2/4 mx-auto shadow-sm rounded-lg p-10">
             <Formulario />
 
-            {result}
+            {loading ? <Spinner /> : <Result />}
         </main>
     </>
   )
